@@ -10,5 +10,8 @@ export default defineConfig({
       '/uploads': 'https://zchat-pro-backend-production.up.railway.app',
       '/stickers': 'https://zchat-pro-backend-production.up.railway.app'
     } 
+  },
+  build: {
+    outDir: 'dist'
   }
 });
