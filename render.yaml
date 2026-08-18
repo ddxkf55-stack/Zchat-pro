@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: zchat-pro-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: your_secret_key_here
+      - key: PORT
+        value: 5000
