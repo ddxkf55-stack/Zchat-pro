@@ -2,6 +2,10 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
+// تعيين الرابط الافتراضي للـ API
+const API_URL = import.meta.env.VITE_API_URL || 'https://zchat-pro-backend-production.up.railway.app';
+axios.defaults.baseURL = API_URL;
+
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
