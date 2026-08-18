@@ -12,9 +12,10 @@ export function useSocket() {
       return;
     }
 
-    console.log('Connecting to socket with token...');
+    const SOCKET_URL = 'https://zchat-pro-backend-production.up.railway.app';
+    console.log('Connecting to socket:', SOCKET_URL);
     
-    const socket = io('http://localhost:5000', {
+    const socket = io(SOCKET_URL, {
       auth: { token },
       transports: ['websocket', 'polling'],
       reconnection: true,
@@ -40,7 +41,6 @@ export function useSocket() {
       console.log('Socket disconnected:', reason);
     });
 
-    // طلب إذن الإشعارات
     if ('Notification' in window && Notification.permission === 'default') {
       Notification.requestPermission();
     }
